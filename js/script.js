@@ -49,6 +49,9 @@
             $('#color').show();
             $('#colorLabel').show();
             $("#color option").each(function(i){
+                if (i === 0) {
+                  $(this).prop('selected', true)
+                }
                 if (i <= 2) {
                     $(this).show()
                 } else ($(this).hide());
@@ -57,6 +60,9 @@
             $('#color').show();
             $('#colorLabel').show();
             $("#color option").each(function(i){
+                if (i === 3) {
+                  $(this).prop('selected', true)
+                }
                 if (i >= 3) {
                     $(this).show()
                 } else ($(this).hide())
