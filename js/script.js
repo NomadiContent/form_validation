@@ -5,6 +5,10 @@
     //set the default payment method to credit card
     $('#payment').val('credit card');
 
+    $('#color').hide();
+
+    $('#colorLabel').hide();
+
     //hide the description of work box if 'other' is not selected
   	  function toggleJob() {
     	if(($('#title').val()) !== 'other') {
@@ -37,20 +41,21 @@
 
     //change the colors available based on the tshit model selected
     function toggleColor() {
-        if ($(this).val() === 'blank'){
-            $("#color option").each(function(i){
-                $(this).show();
-            });
-
+        if ($('#design').val() === 'blank'){
+            $('#color').hide();
+            $('#colorLabel').hide();
         }
         else if($('#design').val() === 'js puns') {
+            $('#color').show();
+            $('#colorLabel').show();
             $("#color option").each(function(i){
                 if (i <= 2) {
                     $(this).show()
                 } else ($(this).hide());
             });
         } else if ($('#design').val() === 'heart js'){
-
+            $('#color').show();
+            $('#colorLabel').show();
             $("#color option").each(function(i){
                 if (i >= 3) {
                     $(this).show()
@@ -153,7 +158,7 @@
     });
 
     //call functions defined above
-    
+
     $( ".activities" ).append( "<p id='total'> Total cost: " + total + "</p>" );
 
     $(".activities label").change(totalCost);
